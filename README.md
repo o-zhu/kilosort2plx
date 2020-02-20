@@ -1,6 +1,8 @@
 # kilosort2plx
 KilosortPlx updated for Kilosort 2 (work in progress)
+
 Built from https://github.com/madeleinea/KilosortPLX
+
 Built from https://github.com/MouseLand/Kilosort2
 
 ## Current status: 
