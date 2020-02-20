@@ -1,13 +1,21 @@
 %% Batch plx/pl2 to binary converter
+% Built from kilosortPLX: https://github.com/madeleinea/KilosortPLX
+% Updates by Oliver Zhu, 2/20/2020
 
 % default options are in parenthesis after the comment
 tic; % start timer
-PATH = 'D:\\Kilosort2PLX\\'; % edit this to be the path to your Kilosort folder
+PATH = 'D:\\kilosort2plx\\'; % edit this to be the path to your Kilosort folder
 dataPATH = strcat(PATH, 'RawData\\'); % path to your raw data folder
 conv_dataPATH = strcat(PATH, 'ConvertedData\\');
 rawdatafolder = dir(dataPATH);
 FILE = 0;
+
+% Load PLX conversion library
+addpath(genpath(PATH)) % loads all scripts in kilosort2plx folder
+
+% Multi-core option
 % p = gcp();
+
 % errorpath = strcat(PATH, 'ErrorFiles\\'); % path to error files folder,where files will go if they cause errors(un-comment try/catch statements at lines 9, 41-44) 
 for i=1:length(rawdatafolder)
     if getfield(rawdatafolder(i),'isdir') ~= 1
